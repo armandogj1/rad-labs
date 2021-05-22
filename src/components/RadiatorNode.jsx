@@ -10,15 +10,15 @@ function RadiatorNode(props) {
 
   if (nodeStatus === 'INVALID_NODE') {
     return (
-      <div className={nodeStatus} data-testid='radiator-node'>
+      <div className={`node ${nodeStatus}`} data-testid='radiator-node'>
         <p>INVALID NODE</p>
       </div>
     );
   }
 
   return (
-    <div className={nodeStatus} data-testid='radiator-node'>
-      <h4>{lora_euid}</h4>
+    <div className={`node ${nodeStatus}`} data-testid='radiator-node'>
+      <h5>{lora_euid}</h5>
       <p>{radiator_temperature}</p>
       <p>{room_temperature}</p>
       <p>{last_message}</p>

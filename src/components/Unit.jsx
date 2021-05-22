@@ -4,7 +4,7 @@ import SpaceList from './SpaceList';
 function Unit({ name, spaces }) {
   return (
     <div className='unit'>
-      <h3>{name}</h3>
+      <h3>Unit: {name}</h3>
       <SpaceList spaces={spaces} name={name} />
     </div>
   );

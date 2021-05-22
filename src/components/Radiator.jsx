@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types';
-import RadiatorNode from './Node';
+import RadiatorNode from './RadiatorNode';
+import '../styles/Radiator.css';
 
 function Radiator({ nodes, number }) {
   return (
     <div className='radiator'>
-      <h3>{number}</h3>
-      {nodes.map((node) => {
-        const { lora_euid } = node;
-        return <RadiatorNode key={lora_euid} {...node} />;
-      })}
+      <h3>Radiator: #{number}</h3>
+      <div className='radiator-node-list'>
+        {nodes.length ? (
+          nodes.map((node) => {
+            const { lora_euid } = node;
+            return <RadiatorNode key={lora_euid} {...node} />;
+          })
+        ) : (
+          <p>No nodes</p>
+        )}
+      </div>
     </div>
   );
 }

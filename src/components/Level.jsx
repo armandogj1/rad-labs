@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import Unit from './Unit';
 import SpaceList from './SpaceList';
+import '../styles/Level.css';
 
 function Level({ level, name, spaces, units }) {
   return (
-    <div>
-      <h3>{name}</h3>
+    <div className='level'>
+      <h3>Level: {name}</h3>
       <SpaceList key={`level-${name}-spaces`} name={name} spaces={spaces} />
       <div className='unit-list'>
         {units.map((unit, idx) => (
