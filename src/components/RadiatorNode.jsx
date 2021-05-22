@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import evaluateNode from '../utils/evaluateNode.js';
 
 function RadiatorNode(props) {
+  // TODO: Include global state using Context to not prop drill
   // const { retrieved_at } = useBuildingData();
   const retrieved_at = 1617840940000;
   const nodeStatus = evaluateNode(props, retrieved_at);
@@ -9,14 +10,14 @@ function RadiatorNode(props) {
 
   if (nodeStatus === 'INVALID_NODE') {
     return (
-      <div className={nodeStatus}>
+      <div className={nodeStatus} data-testid='radiator-node'>
         <p>INVALID NODE</p>
       </div>
     );
   }
 
   return (
-    <div className={nodeStatus}>
+    <div className={nodeStatus} data-testid='radiator-node'>
       <h4>{lora_euid}</h4>
       <p>{radiator_temperature}</p>
       <p>{room_temperature}</p>
