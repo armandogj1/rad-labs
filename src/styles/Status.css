@@ -1,0 +1,11 @@
+.statuses {
+  display: flex;
+  max-width: 4em;
+  height: 1em;
+}
+
+.status {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}

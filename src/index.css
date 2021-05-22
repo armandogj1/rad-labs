@@ -15,3 +15,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.INVALID_NODE {
+  background-color: var(--invalid-node-color);
+}
+
+.NO_STEAM {
+  background-color: var(--no-steam-node-color);
+}
+
+.VALID_NODE {
+  background-color: var(--valid-node-color);
+}
+
+.NODE_OFFLINE {
+  background-color: var(--offline-node-color);
+}

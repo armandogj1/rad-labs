@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
-const useOpen = () => {
+function useOpen() {
   const [isOpen, setOpen] = useState(false);
 
-  const toggleOpen = () => {
+  const toggleOpen = (e) => {
+    e.stopPropagation();
     setOpen((prev) => !prev);
   };
 
   return { isOpen, toggleOpen };
-};
+}
 
 export default useOpen;
