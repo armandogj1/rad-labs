@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types';
 import Radiator from './Radiator';
+import useOpen from '../hooks/useOpen';
 import '../styles/Space.css';
 
 function Space({ name, radiators }) {
+  const { isOpen, toggleOpen } = useOpen();
   return (
-    <div className='space'>
+    <div className='space' onClick={toggleOpen}>
       <h3>{name}</h3>
-      <div className='radiator-list'>
-        {radiators.map((radiator, idx) => (
-          <Radiator key={`${name}-${idx}`} {...radiator} />
-        ))}
-      </div>
+      {isOpen && (
+        <div className='radiator-list'>
+          {radiators.map((radiator, idx) => (
+            <Radiator key={`${name}-${idx}`} {...radiator} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -5,6 +5,10 @@
   padding: 1em;
 }
 
+.radiator:not(:last-child) {
+  margin-bottom: 1em;
+}
+
 .radiator-node-list {
   display: flex;
 }
@@ -32,4 +36,9 @@
 
 .NODE_OFFLINE {
   background-color: var(--offline-node-color);
+}
+
+.NO_NODES {
+  border: 1px solid black;
+  padding: 1em;
 }

@@ -4,3 +4,7 @@
   padding: 1em;
   border: 1px solid black;
 }
+
+.space:not(:last-child) {
+  margin-bottom: 1em;
+}
