@@ -14,6 +14,7 @@ function Radiator({ nodes, number }) {
 }
 
 Radiator.propTypes = {
+  number: PropTypes.number,
   nodes: PropTypes.array,
 };
 
