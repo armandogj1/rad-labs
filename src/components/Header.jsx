@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import Widget from './Widget';
 
-function Header({ statuses, node_count, Heading, name, isOpen }) {
+function Header({ statuses, node_count, Heading, name, isOpen, label }) {
   return (
     <header className='heading'>
-      <Heading>{name}</Heading>
+      <Heading>{`${label}: ${name}`}</Heading>
       {!isOpen && <Widget statuses={statuses} nodeCount={node_count} />}
     </header>
   );
@@ -16,6 +16,7 @@ Header.propTypes = {
   name: PropTypes.string,
   Heading: PropTypes.string,
   isOpen: PropTypes.bool,
+  label: PropTypes.string,
 };
 
 export default Header;

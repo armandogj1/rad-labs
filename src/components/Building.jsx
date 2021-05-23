@@ -8,7 +8,7 @@ function Building({ data }) {
 
   return (
     <section className='building' onClick={toggleOpen}>
-      <Header {...data} isOpen={isOpen} Heading={'h1'} />
+      <Header {...data} isOpen={isOpen} Heading={'h1'} label={'Building'} />
       {isOpen && <FloorList {...data} />}
     </section>
   );

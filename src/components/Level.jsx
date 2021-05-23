@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Unit from './Unit';
 import SpaceList from './SpaceList';
+import Header from './Header';
 import useOpen from '../hooks/useOpen';
 import { useRetrieveTime } from '../hooks/useRetrieveTime';
 import evaluateChildren from '../utils/evaluateChildren.js';
@@ -10,13 +11,10 @@ import '../styles/Level.css';
 function Level(props) {
   const { level, name, spaces, units } = props;
   const { isOpen, toggleOpen } = useOpen();
-  const { retrieved_at } = useRetrieveTime();
-  const statuses = evaluateChildren(props, retrieved_at);
 
   return (
     <div className='level' onClick={toggleOpen}>
-      <h3>Level: {name}</h3>
-      <Status statuses={[...statuses]} />
+      <Header {...props} isOpen={isOpen} Heading={'h3'} label={'Level'} />
       {isOpen && (
         <>
           {!!spaces.length && (
