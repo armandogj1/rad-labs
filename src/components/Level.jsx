@@ -7,16 +7,11 @@ import evaluateChildren from '../utils/evaluateChildren.js';
 import Status from './Status';
 import '../styles/Level.css';
 
-// TODO: Replace with context using hook
-// const retrieved_at = 1617840940000;
-
 function Level(props) {
   const { level, name, spaces, units } = props;
   const { isOpen, toggleOpen } = useOpen();
   const { retrieved_at } = useRetrieveTime();
   const statuses = evaluateChildren(props, retrieved_at);
-
-  console.log(statuses);
 
   return (
     <div className='level' onClick={toggleOpen}>
