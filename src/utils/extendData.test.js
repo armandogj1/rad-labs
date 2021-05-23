@@ -8,6 +8,5 @@ describe('Test extendData', () => {
 
     extendData(level4, 1617840940000);
     expect(level4).toHaveProperty('node_count');
-    console.log(level4);
   });
 });
