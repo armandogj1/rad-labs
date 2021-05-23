@@ -5,10 +5,6 @@
   border: 1px solid black;
 }
 
-.level:not(:last-child) {
+/* .level:not(:last-child) {
   margin-bottom: 1em;
-}
-
-.level *:not(:last-child) {
-  margin-bottom: 1em;
-}
+} */

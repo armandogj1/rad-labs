@@ -2,16 +2,18 @@ import PropTypes from 'prop-types';
 import Unit from './Unit';
 import SpaceList from './SpaceList';
 import useOpen from '../hooks/useOpen';
+import { useRetrieveTime } from '../hooks/useRetrieveTime';
 import evaluateChildren from '../utils/evaluateChildren.js';
 import Status from './Status';
 import '../styles/Level.css';
 
 // TODO: Replace with context using hook
-const retrieved_at = 1617840940000;
+// const retrieved_at = 1617840940000;
 
 function Level(props) {
   const { level, name, spaces, units } = props;
   const { isOpen, toggleOpen } = useOpen();
+  const { retrieved_at } = useRetrieveTime();
   const statuses = evaluateChildren(props, retrieved_at);
 
   console.log(statuses);
@@ -22,7 +24,9 @@ function Level(props) {
       <Status statuses={[...statuses]} />
       {isOpen && (
         <>
-          <SpaceList key={`level-${name}-spaces`} name={name} spaces={spaces} />
+          {!!spaces.length && (
+            <SpaceList key={`level-${name}-spaces`} name={name} spaces={spaces} />
+          )}
           <div className='unit-list'>
             {units.map((unit, idx) => (
               <Unit key={`level:${name}-unit:${unit.name}`} {...unit} />

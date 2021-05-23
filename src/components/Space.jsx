@@ -2,13 +2,15 @@ import PropTypes from 'prop-types';
 import Radiator from './Radiator';
 import Status from './Status';
 import useOpen from '../hooks/useOpen';
+import { useRetrieveTime } from '../hooks/useRetrieveTime';
 import evaluateChildren from '../utils/evaluateChildren.js';
 import '../styles/Space.css';
 
 function Space(props) {
   const { name, radiators } = props;
   const { isOpen, toggleOpen } = useOpen();
-  const statuses = evaluateChildren(props);
+  const { retrieved_at } = useRetrieveTime();
+  const statuses = evaluateChildren(props, retrieved_at);
 
   return (
     <div className='space' onClick={toggleOpen}>

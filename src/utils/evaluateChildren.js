@@ -14,8 +14,12 @@ function evaluateChildren(element, retrieved_at = 1617840940000, statuses = new 
 
   for (let property in element) {
     if (Array.isArray(element[property])) {
-      for (let child of element[property]) {
-        evaluateChildren(child, retrieved_at, statuses);
+      if (property === 'nodes' && !element[property].length) {
+        statuses.add('NO_NODES');
+      } else {
+        for (let child of element[property]) {
+          evaluateChildren(child, retrieved_at, statuses);
+        }
       }
     }
   }

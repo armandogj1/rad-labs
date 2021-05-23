@@ -12,8 +12,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+*:not(:last-child) {
+  margin-bottom: 1em;
 }
 
 .INVALID_NODE {
@@ -30,4 +30,8 @@ code {
 
 .NODE_OFFLINE {
   background-color: var(--offline-node-color);
+}
+
+.NO_NODES {
+  background-color: transparent;
 }

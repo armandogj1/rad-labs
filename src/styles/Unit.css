@@ -3,6 +3,6 @@
   padding: 1em;
 }
 
-.unit:not(:last-child) {
+/* .unit:not(:last-child) {
   margin-bottom: 1em;
-}
+} */
