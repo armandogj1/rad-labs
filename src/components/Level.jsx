@@ -3,13 +3,10 @@ import Unit from './Unit';
 import SpaceList from './SpaceList';
 import Header from './Header';
 import useOpen from '../hooks/useOpen';
-import { useRetrieveTime } from '../hooks/useRetrieveTime';
-import evaluateChildren from '../utils/evaluateChildren.js';
-import Status from './Status';
 import '../styles/Level.css';
 
 function Level(props) {
-  const { level, name, spaces, units } = props;
+  const { name, spaces, units } = props;
   const { isOpen, toggleOpen } = useOpen();
 
   return (

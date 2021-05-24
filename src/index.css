@@ -3,6 +3,8 @@
   --no-steam-node-color: hsl(200, 80%, 60%);
   --offline-node-color: hsl(60, 80%, 60%);
   --valid-node-color: hsl(100, 80%, 60%);
+
+  --main-color: hsl(45, 100%, 50%);
 }
 body {
   margin: 0;
