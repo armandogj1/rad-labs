@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import evaluateNode from '../utils/evaluateNode.js';
+import evaluateNode from '../utils/evaluateNode';
+import formatTime from '../utils/formatTime';
 import { useRetrieveTime } from '../hooks/useRetrieveTime';
-import calculateTime from '../utils/calculateTime.js';
+import calculateTime from '../utils/calculateTime';
 
 function RadiatorNode(props) {
   // TODO: Include global state using Context to not prop drill
@@ -24,6 +25,7 @@ function RadiatorNode(props) {
       <p>{radiator_temperature}</p>
       <p>{room_temperature}</p>
       <p>{last_message}</p>
+      <p>{formatTime(last_message)}</p>
       <p>{calculateTime(retrieved_at, last_message)}</p>
     </div>
   );

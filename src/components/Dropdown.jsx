@@ -9,7 +9,7 @@ function Dropdown({ data }) {
   const { retrieved_at, name, node_count, statuses } = data;
 
   return (
-    <div className='dropdown'>
+    <li className='dropdown'>
       <button onClick={toggleOpen}>Info</button>
       {isOpen && (
         <aside className='dropdown-modal'>
@@ -20,7 +20,7 @@ function Dropdown({ data }) {
           <p>Statuses: {statuses.join(', ')}</p>
         </aside>
       )}
-    </div>
+    </li>
   );
 }
 

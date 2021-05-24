@@ -14,7 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*:not(:last-child, .node) {
+*:not(:last-child, .node, .main-header, #root) {
   margin-bottom: 1em;
 }
 

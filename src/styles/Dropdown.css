@@ -6,14 +6,9 @@
 .dropdown button {
   border: none;
   background-color: transparent;
-  line-height: 1.25em;
   font-size: 1.25em;
   font-weight: 800;
   cursor: pointer;
-}
-
-.dropdown button:hover {
-  color: var(--main-color);
 }
 
 .dropdown-modal {

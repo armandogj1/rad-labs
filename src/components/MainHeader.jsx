@@ -6,9 +6,7 @@ function MainHeader({ data }) {
   return (
     <div className='main-header'>
       <ul>
-        <li>
-          <Dropdown data={data} />
-        </li>
+        <Dropdown data={data} />
       </ul>
     </div>
   );

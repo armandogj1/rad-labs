@@ -1,9 +1,15 @@
 .App {
   text-align: center;
-  padding: 1em;
 }
 
 .heading {
   display: flex;
   justify-content: space-around;
+}
+
+.building {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
 }

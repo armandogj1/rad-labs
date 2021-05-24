@@ -1,3 +1,5 @@
+// TODO: Add st/nd/rd/th to day
+
 /**
  * @param {number} mils - time in milliseconds
  * @return {string} - formatted date string
