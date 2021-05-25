@@ -13,3 +13,19 @@
   height: calc(100vh - 100px);
   overflow-y: scroll;
 }
+
+.explorer-viewer {
+  display: flex;
+  height: calc(100vh - 100px);
+  width: 100vw;
+}
+
+.explorer {
+  width: 50vw;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
+
+.viewer {
+  width: 50vw;
+}

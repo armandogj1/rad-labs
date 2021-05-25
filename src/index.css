@@ -14,9 +14,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*:not(:last-child, .node, .main-header, #root) {
+/* *:not(:last-child, .node, .main-header, #root) {
   margin-bottom: 1em;
-}
+} */
 
 .INVALID_NODE {
   background-color: var(--invalid-node-color);

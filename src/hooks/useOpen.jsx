@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 function useOpen() {
   const [isOpen, setOpen] = useState(false);

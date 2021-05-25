@@ -3,6 +3,7 @@ import Status from './Status';
 import '../styles/Widget.css';
 
 function Widget({ statuses, nodeCount }) {
+  if (!statuses) return null;
   return (
     <div className='widget'>
       <h3>Nodes: {nodeCount}</h3>

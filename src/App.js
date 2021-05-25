@@ -1,7 +1,6 @@
 import './App.css';
 import { useRef } from 'react';
 import { TimeProvider } from './hooks/useRetrieveTime';
-import { ItemProvider } from './hooks/useItem';
 import MainHeader from './components/MainHeader';
 import Building from './components/Building';
 import ExplorerItem from './components/ExplorerItem';
@@ -19,10 +18,12 @@ function App() {
       <div className='App'>
         <MainHeader data={sampleData} />
         {/* <Building data={sampleData} /> */}
-        <div>
-          <ExplorerItem el={sampleData} setViewed={viewerSetRef} />
+        <section className='explorer-viewer'>
+          <div className='explorer'>
+            <ExplorerItem el={sampleData} setViewed={viewerSetRef} />
+          </div>
           <Viewer el={sampleData} viewerSetRef={viewerSetRef} />
-        </div>
+        </section>
       </div>
     </TimeProvider>
   );

@@ -6,12 +6,12 @@
 
 .status {
   width: 1em;
-  height: 1em;
+  max-height: 1em;
   border-radius: 50%;
 }
 
 .status.NO_NODES {
   border: 1px solid black;
   width: 0.9em;
-  height: 0.9em;
+  height: 100%;
 }

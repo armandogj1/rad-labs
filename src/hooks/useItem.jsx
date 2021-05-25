@@ -1,28 +1,21 @@
-import { createContext, useContext, useState, useEffect, useRef } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const ItemContext = createContext(null);
 ItemContext.displayName = 'ItemContext';
 
 function ItemProvider({ initialItem = {}, children }) {
   const [item, setItem] = useState();
-  const setFileRef = useRef(setItem);
 
   return (
-    <ItemContext.Provider value={{ item, setItem, setFileRef }}>
-      {children}
-    </ItemContext.Provider>
+    <ItemContext.Provider value={{ item, setItem }}>{children}</ItemContext.Provider>
   );
 }
 
 // useContext hook
 function useItemContext(callback) {
-  const { item, setItem, setFileRef } = useContext(ItemContext);
+  const { item, setItem } = useContext(ItemContext);
 
-  useEffect(() => {
-    setFileRef.current = setItem;
-  }, [item]);
-
-  return { item, setItem, setFileRef };
+  return { item, setItem };
 }
 
 export { useItemContext, ItemProvider };

@@ -5,3 +5,22 @@
 .explorer-item-children {
   margin-left: 1em;
 }
+
+.explorer-line {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.explorer-line *:is(.status, p) {
+  margin: 0;
+}
+
+.explorer-line .statuses {
+  margin-left: 1em;
+}
+
+.status.NO_NODES {
+  border: 1px solid black;
+  max-width: 0.8em;
+  max-height: 90%;
+}

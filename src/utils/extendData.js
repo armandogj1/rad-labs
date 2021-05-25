@@ -8,7 +8,9 @@ import evaluateNode from './evaluateNode';
 function extendData(data, retrieved_at) {
   if (typeof data !== 'object') return;
   if (data.lora_euid !== undefined) {
-    return evaluateNode(data, retrieved_at);
+    const status = evaluateNode(data, retrieved_at);
+    data.status = status;
+    return status;
   }
 
   data.node_count = data.node_count || 0;
