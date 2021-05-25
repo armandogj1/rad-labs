@@ -10,7 +10,9 @@ function Dropdown({ data }) {
 
   return (
     <li className='dropdown'>
-      <button onClick={toggleOpen}>Info</button>
+      <button id='dropdown-button' onClick={toggleOpen}>
+        Info
+      </button>
       {isOpen && (
         <aside className='dropdown-modal'>
           <p>{name}</p>

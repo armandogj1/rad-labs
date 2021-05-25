@@ -34,6 +34,9 @@
 ## Make File Explorer
 
 - Clicking on the element sends the props to the info window
+- Have Context to past currently viewed element
+- Have single line for each element
+- Viewer Component renders different info depending on node or other element
 
 ## Questions
 
