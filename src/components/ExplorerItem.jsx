@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
-import { useRef, useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import Status from './Status';
 import useOpen from '../hooks/useOpen';
+import { useRetrieveTime } from '../hooks/useRetrieveTime';
 import exists from '../utils/exists';
+import getTimeClass from '../utils/getTimeClass.js';
 import '../styles/ExplorerItem.css';
 
 function ExplorerItem({ el, type = 'Address', setViewed }) {
   const { isOpen, toggleOpen } = useOpen();
+  const { retrieved_at } = useRetrieveTime();
 
   useLayoutEffect(() => {
     setViewed.current(el);
@@ -16,7 +19,7 @@ function ExplorerItem({ el, type = 'Address', setViewed }) {
   if (exists(el.lora_euid)) {
     return (
       <div className='explorer-line' onClick={toggleOpen}>
-        <p>
+        <p className={getTimeClass(el.last_message, retrieved_at)}>
           {`${type}`}: {el.lora_euid}
         </p>
         <Status status={el.status} />
@@ -31,7 +34,8 @@ function ExplorerItem({ el, type = 'Address', setViewed }) {
           <p>
             {`${type}`}: {el.name || el.number}
           </p>
-          <Status statuses={el.statuses} />
+          <div className={`arrow ${isOpen ? 'up' : 'down'}`}></div>
+          {!isOpen && <Status statuses={el.statuses} />}
         </div>
       )}
       {isOpen && (
@@ -70,7 +74,7 @@ function ExplorerItem({ el, type = 'Address', setViewed }) {
 ExplorerItem.propTypes = {
   el: PropTypes.object,
   type: PropTypes.string,
-  setViewed: PropTypes.func,
+  setViewed: PropTypes.object,
 };
 
 export default ExplorerItem;

@@ -8,6 +8,7 @@
 
 .explorer-line {
   display: flex;
+  align-items: center;
   margin-bottom: 0.5em;
 }
 
@@ -19,8 +20,34 @@
   margin-left: 1em;
 }
 
+.explorer-line .arrow {
+  margin-left: 1em;
+}
+
 .status.NO_NODES {
   border: 1px solid black;
   max-width: 0.8em;
   max-height: 90%;
+}
+
+.five-up-days {
+  opacity: 30%;
+}
+.two-up-days {
+  opacity: 40%;
+}
+.one-day {
+  opacity: 50%;
+}
+.twelve-hours {
+  opacity: 60%;
+}
+.three-hours {
+  opacity: 70%;
+}
+.one-hour {
+  opacity: 80%;
+}
+.ten-minutes {
+  opacity: 90%;
 }

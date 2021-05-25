@@ -19,11 +19,13 @@ function evaluateNode(node, retrieved_at) {
   if (!last_message && !radiator_temperature && !room_temperature && !lora_euid)
     return 'INVALID_NODE';
 
-  // TODO: ask what is the threshold for considering a radiator cold
-  if (radiator_temperature < 150) return 'NO_STEAM';
-
   // TODO: What time gap is considered to be offline
-  if (retrieved_at - last_message > 1000 * 60 * 15) return 'NODE_OFFLINE';
+  // ten minutes
+  if (retrieved_at - last_message > 1000 * 60 * 10) return 'NODE_OFFLINE';
+
+  // TODO: ask what is the threshold for considering a radiator cold
+  const tempDiff = radiator_temperature - room_temperature;
+  if (tempDiff <= 50) return 'NO_STEAM';
 
   return 'VALID_NODE';
 }

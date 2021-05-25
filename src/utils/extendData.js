@@ -1,4 +1,5 @@
 import evaluateNode from './evaluateNode';
+import capitalizeAndSingularize from './capitalizeAndSingularize';
 
 // TODO: fix type naming
 /**
@@ -12,7 +13,7 @@ function extendData(data, retrieved_at, type = 'Building') {
   if (data.lora_euid !== undefined) {
     const status = evaluateNode(data, retrieved_at);
     data.status = status;
-    data.type = type;
+    data.type = capitalizeAndSingularize(type);
     return status;
   }
 
@@ -27,7 +28,7 @@ function extendData(data, retrieved_at, type = 'Building') {
     if (key === 'nodes' && !value.length) {
       noNodes = true;
     } else if (Array.isArray(value)) {
-      const innerType = key[key.length - 1] === 's' ? key.slice(0, -1) : key;
+      const innerType = capitalizeAndSingularize(key);
       for (let innerValue of value) {
         const innerStatuses = extendData(innerValue, retrieved_at, innerType);
 

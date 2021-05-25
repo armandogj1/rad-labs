@@ -4,6 +4,11 @@
   height: 100%;
 }
 
+.button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 #dropdown-button {
   border: none;
   margin-bottom: 0px;

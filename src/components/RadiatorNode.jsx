@@ -21,12 +21,13 @@ function RadiatorNode(props) {
 
   return (
     <div className={`node ${nodeStatus}`} data-testid='radiator-node'>
-      <h5>{lora_euid}</h5>
-      <p>{radiator_temperature}</p>
-      <p>{room_temperature}</p>
-      <p>{last_message}</p>
-      <p>{formatTime(last_message)}</p>
-      <p>{calculateTime(retrieved_at, last_message)}</p>
+      <h5>ID: {lora_euid}</h5>
+      <p>Radiator Temperature: {radiator_temperature} F</p>
+      <p>
+        Room Temperature: <span>{room_temperature}</span> F
+      </p>
+      <p>Date: {formatTime(last_message)}</p>
+      <p>Last last_message: {calculateTime(retrieved_at, last_message)}</p>
     </div>
   );
 }

@@ -7,7 +7,8 @@ function Viewer({ el, viewerSetRef }) {
   const [item, setItem] = useState(el);
   viewerSetRef.current = setItem;
   // console.log(viewerSetRef);
-  const { statuses, node_count, name, number, last_message, lora_euid } = item;
+  const { statuses, node_count, name, number, last_message, lora_euid, type, nodes } =
+    item;
 
   return (
     <div className='viewer'>
@@ -15,6 +16,7 @@ function Viewer({ el, viewerSetRef }) {
 
       <div>
         {!!lora_euid && <RadiatorNode {...item} />}
+        {type === 'Radiator' && nodes.map((n) => <RadiatorNode {...n} />)}
         <div>
           <p>{name}</p>
           <p>{number}</p>

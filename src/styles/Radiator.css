@@ -18,9 +18,9 @@
   padding: 1em;
 }
 
-.node:not(:first-child) {
+/* .node:not(:first-child) {
   margin-left: 1em;
-}
+} */
 
 .INVALID_NODE {
   background-color: var(--invalid-node-color);

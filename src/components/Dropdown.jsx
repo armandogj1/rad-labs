@@ -10,9 +10,12 @@ function Dropdown({ data }) {
 
   return (
     <li className='dropdown'>
-      <button id='dropdown-button' onClick={toggleOpen}>
-        Info
-      </button>
+      <div className='button-wrapper'>
+        <button id='dropdown-button' onClick={toggleOpen}>
+          Info
+        </button>
+        <div className={`arrow ${isOpen ? 'up' : 'down'}`}></div>
+      </div>
       {isOpen && (
         <aside className='dropdown-modal'>
           <p>{name}</p>

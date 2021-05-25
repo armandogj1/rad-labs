@@ -1,10 +1,16 @@
 :root {
+  /* statuses */
   --invalid-node-color: hsl(1, 80%, 60%);
   --no-steam-node-color: hsl(200, 80%, 60%);
-  --offline-node-color: hsl(60, 80%, 60%);
+  --offline-node-color: hsl(1, 0%, 60%);
+  /* --offline-node-color: hsl(60, 80%, 60%); */
   --valid-node-color: hsl(100, 80%, 60%);
 
+  /* temperatures */
+  --invalid-node-color: hsl(1, 80%, 60%);
+
   --main-color: hsl(45, 100%, 50%);
+  --main-grey: hsl(1, 0%, 80%);
 }
 body {
   margin: 0;
