@@ -1,18 +1,22 @@
 import evaluateNode from './evaluateNode';
 
+// TODO: fix type naming
 /**
  * @param {object} data - tree or radiator node
  * @param {number} retrieved_at - time in milliseconds
+ * @param {string} type - the property name passed as type
  * @return {array} - extended tree containing count and status
  */
-function extendData(data, retrieved_at) {
+function extendData(data, retrieved_at, type = 'Building') {
   if (typeof data !== 'object') return;
   if (data.lora_euid !== undefined) {
     const status = evaluateNode(data, retrieved_at);
     data.status = status;
+    data.type = type;
     return status;
   }
 
+  data.type = type;
   data.node_count = data.node_count || 0;
   const statuses = [];
   let noNodes = false;
@@ -23,8 +27,9 @@ function extendData(data, retrieved_at) {
     if (key === 'nodes' && !value.length) {
       noNodes = true;
     } else if (Array.isArray(value)) {
+      const innerType = key[key.length - 1] === 's' ? key.slice(0, -1) : key;
       for (let innerValue of value) {
-        const innerStatuses = extendData(innerValue, retrieved_at);
+        const innerStatuses = extendData(innerValue, retrieved_at, innerType);
 
         if (Array.isArray(innerStatuses)) {
           statuses.push(...innerStatuses);
