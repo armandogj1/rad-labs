@@ -2,27 +2,25 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Widget from './Widget';
 import RadiatorNode from './RadiatorNode';
+import exists from '../utils/exists';
+import '../styles/Viewer.css';
 
 function Viewer({ el, viewerSetRef }) {
   const [item, setItem] = useState(el);
   viewerSetRef.current = setItem;
   // console.log(viewerSetRef);
-  const { statuses, node_count, name, number, last_message, lora_euid, type, nodes } =
-    item;
+  const { statuses, node_count, lora_euid, type, nodes } = item;
 
   return (
     <div className='viewer'>
       <Widget statuses={statuses} nodeCount={node_count} />
 
-      <div>
-        {!!lora_euid && <RadiatorNode {...item} />}
-        {type === 'Radiator' && nodes.map((n) => <RadiatorNode {...n} />)}
-        <div>
-          <p>{name}</p>
-          <p>{number}</p>
-          <p>{last_message}</p>
+      {(exists(lora_euid) || exists(nodes)) && (
+        <div className='radiator-nodes'>
+          {!!lora_euid && <RadiatorNode {...item} />}
+          {type === 'Radiator' && nodes.map((n) => <RadiatorNode {...n} />)}
         </div>
-      </div>
+      )}
     </div>
   );
 }

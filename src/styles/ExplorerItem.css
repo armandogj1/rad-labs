@@ -25,9 +25,9 @@
 }
 
 .status.NO_NODES {
-  border: 1px solid black;
-  max-width: 0.8em;
-  max-height: 90%;
+  border: 1px solid var(--main-grey);
+  /* max-width: 0.8em; */
+  /* max-height: 90%; */
 }
 
 .five-up-days {

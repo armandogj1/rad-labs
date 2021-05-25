@@ -1,6 +1,6 @@
 .statuses {
   display: flex;
-  max-width: 4em;
+  /* max-width: 4em; */
   height: 1em;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .status.NO_NODES {
-  border: 1px solid black;
-  width: 0.9em;
+  border: 1px solid var(--main-grey);
+  /* width: 0.9em; */
   height: 100%;
 }

@@ -1,7 +1,7 @@
 .radiator {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid var(--main-grey);
   padding: 1em;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .node {
-  border: 1px solid black;
+  border: 1px solid var(--main-grey);
   padding: 1em;
 }
 
@@ -39,6 +39,20 @@
 }
 
 .radiator .NO_NODES {
-  border: 1px solid black;
-  padding: 1em;
+  border: 1px solid var(--main-grey);
+  /* padding: 1em; */
+}
+
+/* Temperatures */
+.HOT {
+  background-color: var(--HOT-color);
+}
+.WARM {
+  background-color: var(--WARM-color);
+}
+.COZY {
+  background-color: var(--COZY-color);
+}
+.COLD {
+  background-color: var(--COLD-color);
 }

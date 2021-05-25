@@ -1,0 +1,18 @@
+.viewer {
+  display: grid;
+  grid-template-columns: 6em 1fr;
+  column-gap: 1em;
+  width: 50vw;
+  max-width: 50vw;
+  padding: 1em;
+  border-left: 1px solid var(--main-grey);
+}
+
+.radiator-nodes {
+  grid-column: 2;
+  overflow-y: scroll;
+}
+
+.radiator-nodes .node:not(:last-child) {
+  margin-bottom: 0.5em;
+}

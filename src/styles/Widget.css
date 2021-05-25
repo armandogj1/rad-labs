@@ -1,7 +1,17 @@
 .widget {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 6em;
-  border: 1px solid black;
+  max-height: 8em;
+  border: 1px solid var(--main-grey);
   padding: 0.5em;
+}
+
+.widget h3 {
+  font-size: 1em;
+}
+
+.widget .statuses {
+  justify-content: center;
 }

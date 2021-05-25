@@ -3,6 +3,7 @@ import evaluateNode from '../utils/evaluateNode';
 import formatTime from '../utils/formatTime';
 import { useRetrieveTime } from '../hooks/useRetrieveTime';
 import calculateTime from '../utils/calculateTime';
+import getTemperatureClass from '../utils/getTemperatureClass';
 
 function RadiatorNode(props) {
   // TODO: Include global state using Context to not prop drill
@@ -20,14 +21,16 @@ function RadiatorNode(props) {
   }
 
   return (
-    <div className={`node ${nodeStatus}`} data-testid='radiator-node'>
+    <div className={`node`} data-testid='radiator-node'>
       <h5>ID: {lora_euid}</h5>
       <p>Radiator Temperature: {radiator_temperature} F</p>
       <p>
-        Room Temperature: <span>{room_temperature}</span> F
+        Room Temperature:{' '}
+        <span className={getTemperatureClass(room_temperature)}>{room_temperature}</span>{' '}
+        F
       </p>
       <p>Date: {formatTime(last_message)}</p>
-      <p>Last last_message: {calculateTime(retrieved_at, last_message)}</p>
+      <p>Last Message: {calculateTime(retrieved_at, last_message)}</p>
     </div>
   );
 }

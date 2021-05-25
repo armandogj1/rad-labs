@@ -1,4 +1,5 @@
 .App {
+  max-height: 100vh;
   text-align: center;
 }
 
@@ -21,14 +22,15 @@
 }
 
 .explorer {
+  box-sizing: border-box;
   padding: 1em;
   width: 50vw;
-  height: calc(100vh - 100px);
   overflow-y: scroll;
 }
 
 .viewer {
   width: 50vw;
+  max-width: 50vw;
   padding: 1em;
   border-left: 1px solid var(--main-grey);
 }
