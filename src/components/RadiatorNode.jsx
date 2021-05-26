@@ -1,27 +1,24 @@
 import PropTypes from 'prop-types';
-import evaluateNode from '../utils/evaluateNode';
 import formatTime from '../utils/formatTime';
 import { useRetrieveTime } from '../hooks/useRetrieveTime';
 import calculateTime from '../utils/calculateTime';
 import getTemperatureClass from '../utils/getTemperatureClass';
 
 function RadiatorNode(props) {
-  // TODO: Include global state using Context to not prop drill
-  // const { retrieved_at } = useBuildingData();
   const { retrieved_at } = useRetrieveTime();
-  const nodeStatus = evaluateNode(props, retrieved_at);
-  const { last_message, lora_euid, radiator_temperature, room_temperature } = props;
+  const { last_message, lora_euid, radiator_temperature, room_temperature, status } =
+    props;
 
-  if (nodeStatus === 'INVALID_NODE') {
+  if (status === 'INVALID_NODE') {
     return (
-      <div className={`node ${nodeStatus}`} data-testid='radiator-node'>
+      <div className='node' data-testid='radiator-node'>
         <p>INVALID NODE</p>
       </div>
     );
   }
 
   return (
-    <div className={`node`} data-testid='radiator-node'>
+    <div className='node' data-testid='radiator-node'>
       <h5>ID: {lora_euid}</h5>
       <p>Radiator Temperature: {radiator_temperature} F</p>
       <p>

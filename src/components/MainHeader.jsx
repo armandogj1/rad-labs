@@ -10,7 +10,6 @@ function MainHeader({ data }) {
         <Dropdown label={'Info'}>
           <div className='info'>
             <p>{data.name}</p>
-            <p>Retrieval Time: {new Date(data.retrieved_at).toString()}</p>
             <p>Retrieval Time: {formatTime(data.retrieved_at)}</p>
             <p>Total Node Count: {data.node_count}</p>
             <p>Statuses: {data.statuses.join(', ')}</p>
@@ -33,6 +32,14 @@ function MainHeader({ data }) {
             <span className='dropdown-entry'>
               <p>Cold: </p>
               <div className='COLD status'></div>
+            </span>
+            <span className='dropdown-entry'>
+              <p>Valid: </p>
+              <div className='VALID_NODE status'></div>
+            </span>
+            <span className='dropdown-entry'>
+              <p>Invalid: </p>
+              <div className='INVALID_NODE status'></div>
             </span>
             <span className='dropdown-entry'>
               <p>Offline: </p>

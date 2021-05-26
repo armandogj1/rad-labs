@@ -1,10 +1,9 @@
 :root {
   /* statuses */
-  --invalid-node-color: hsl(1, 80%, 60%);
+  --invalid-node-color: hsl(1, 80%, 40%);
   --no-steam-node-color: hsl(200, 80%, 60%);
   --offline-node-color: hsl(1, 0%, 60%);
-  /* --offline-node-color: hsl(60, 80%, 60%); */
-  --valid-node-color: hsl(100, 80%, 60%);
+  --valid-node-color: hsl(120, 80%, 40%);
 
   /* temperatures */
   --HOT-color: hsl(1, 80%, 60%);

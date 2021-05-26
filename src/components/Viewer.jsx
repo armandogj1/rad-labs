@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import Widget from './Widget';
 import RadiatorNode from './RadiatorNode';
 import exists from '../utils/exists';
@@ -18,7 +19,7 @@ function Viewer({ el, viewerSetRef }) {
       {(exists(lora_euid) || exists(nodes)) && (
         <div className='radiator-nodes'>
           {!!lora_euid && <RadiatorNode {...item} />}
-          {type === 'Radiator' && nodes.map((n) => <RadiatorNode {...n} />)}
+          {type === 'Radiator' && nodes.map((n) => <RadiatorNode key={uuid()} {...n} />)}
         </div>
       )}
     </div>
