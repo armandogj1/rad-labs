@@ -38,6 +38,10 @@
 - Have single line for each element
 - Viewer Component renders different info depending on node or other element
 
+## Dropdown
+
+- Refactor to take children for modal
+
 ## Questions
 
 - Should (EST) or (UTC) be included in the time?

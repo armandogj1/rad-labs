@@ -1,6 +1,6 @@
 .main-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 100px;
   max-height: 100px;
@@ -8,5 +8,10 @@
 }
 
 .main-header ul {
+  display: flex;
+  justify-content: space-between;
   list-style: none;
+  padding: 0;
+  width: 500px;
+  margin-bottom: 0;
 }

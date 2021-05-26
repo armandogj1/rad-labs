@@ -59,3 +59,17 @@
   /* transform: rotate(45deg) translateY(50%);
   -webkit-transform: rotate(45deg) translateY(50%); */
 }
+
+/* Temperatures */
+.HOT {
+  background-color: var(--HOT-color);
+}
+.WARM {
+  background-color: var(--WARM-color);
+}
+.COZY {
+  background-color: var(--COZY-color);
+}
+.COLD {
+  background-color: var(--COLD-color);
+}

@@ -42,17 +42,3 @@
   border: 1px solid var(--main-grey);
   /* padding: 1em; */
 }
-
-/* Temperatures */
-.HOT {
-  background-color: var(--HOT-color);
-}
-.WARM {
-  background-color: var(--WARM-color);
-}
-.COZY {
-  background-color: var(--COZY-color);
-}
-.COLD {
-  background-color: var(--COLD-color);
-}
